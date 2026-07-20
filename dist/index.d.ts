@@ -11,6 +11,7 @@ export declare function templatePageModule(options?: TemplatePageModuleOptions):
         href: string;
     };
     collections: never[];
+    i18n: import("@navfolio/core").NavfolioI18nContribution;
     routes: {
         entrypoint: URL;
         prerender: boolean;

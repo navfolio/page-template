@@ -1,28 +1,32 @@
 ---
+import { getHtmlLang, getI18n, getSiteConfig } from 'virtual:navfolio/page-runtime';
+
 const builtAt = new Date().toISOString().slice(0, 10);
+const siteConfig = await getSiteConfig();
+const htmlLang = getHtmlLang(siteConfig);
+const i18n = getI18n(siteConfig);
 ---
 
-<html lang="en">
+<html lang={htmlLang}>
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Hello Navfolio Page Module</title>
+    <title>{i18n.t('template.documentTitle')}</title>
   </head>
   <body>
     <main class="page-shell">
-      <p class="eyebrow">Navfolio Page Module</p>
-      <h1>Hello from a custom page module.</h1>
+      <p class="eyebrow">{i18n.t('template.eyebrow')}</p>
+      <h1>{i18n.t('template.heading')}</h1>
       <p class="lede">
-        This route is injected from <code>@navfolio/page-template</code>. Replace this Astro
-        entrypoint with your own layout, data, and styles.
+        {i18n.t('template.description')}
       </p>
       <dl>
         <div>
-          <dt>Default route</dt>
+          <dt>{i18n.t('template.defaultRoute')}</dt>
           <dd><code>/hello-page</code></dd>
         </div>
         <div>
-          <dt>Build date</dt>
+          <dt>{i18n.t('template.buildDate')}</dt>
           <dd>{builtAt}</dd>
         </div>
       </dl>

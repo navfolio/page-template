@@ -9,6 +9,7 @@ export function templatePageModule(options = {}) {
             href: route,
         },
         collections: [],
+        i18n: templateI18n,
         routes: [
             {
                 entrypoint: new URL('./routes/hello.astro', import.meta.url),
@@ -24,3 +25,4 @@ export function templatePageModule(options = {}) {
         },
     };
 }
+import { templateI18n } from './i18n.js';

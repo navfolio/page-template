@@ -25,6 +25,12 @@
     "build": "tsc -p tsconfig.json",
     "typecheck": "tsc --noEmit"
   },
+  "dependencies": {
+    "@navfolio/core": "github:navfolio/core"
+  },
+  "peerDependencies": {
+    "astro": ">=7.0.0"
+  },
   "devDependencies": {
     "typescript": "^6.0.3"
   }
